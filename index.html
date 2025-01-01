@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Voting System</title>
+    <script src="https://cdn.jsdelivr.net/npm/ethers/dist/ethers.min.js"></script>
+  </head>
+  <body>
+    <h1>Voting System</h1>
+
+    <section>
+      <button id="connectButton">Connect Wallet</button>
+      <h2>Owner Actions</h2>
+      <div>
+        <label for="candidateId">Add Candidate ID:</label>
+        <input
+          type="number"
+          id="candidateId"
+          placeholder="Enter Candidate ID"
+        />
+        <button onclick="addCandidate()">Add Candidate</button>
+      </div>
+
+      <div>
+        <label for="voterAddress">Register Voter Address:</label>
+        <input
+          type="text"
+          id="voterAddress"
+          placeholder="Enter Voter Address"
+        />
+        <button onclick="registerVoter()">Register Voter</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Voter Actions</h2>
+      <div>
+        <label for="voterIndex">Your Voter Index:</label>
+        <input type="number" id="voterIndex" placeholder="Enter Your Index" />
+      </div>
+      <div>
+        <label for="voteCandidateId">Vote for Candidate ID:</label>
+        <input
+          type="number"
+          id="voteCandidateId"
+          placeholder="Enter Candidate ID"
+        />
+        <button onclick="castVote()">Vote</button>
+      </div>
+    </section>
+
+    <section>
+      <h2>Results</h2>
+      <button onclick="getWinner()">Get Winner</button>
+      <p id="winnerDisplay"></p>
+    </section>
+
+    <script src="./index.js" type="module"></script>
+  </body>
+</html>
